@@ -14,9 +14,16 @@ if (!mongoURI) {
   console.error("❌ MongoDB URI is missing! Check your .env file.");
   process.exit(1);
 }
+app.get('/', (req, res)=>{
+  res.send("MINI_Link")
+})
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173', // Replace with your actual frontend URL
+  methods: 'GET,POST,PUT,DELETE',
+  credentials: true // If using cookies or authentication
+}));
 app.use(bodyParser.json());
 
 // MongoDB connection
