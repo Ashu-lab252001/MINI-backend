@@ -20,9 +20,7 @@ app.get('/', (req, res)=>{
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173', // Replace with your actual frontend URL
-  methods: 'GET,POST,PUT,DELETE',
-  credentials: true // If using cookies or authentication
+ credentials: true 
 }));
 app.use(bodyParser.json());
 
